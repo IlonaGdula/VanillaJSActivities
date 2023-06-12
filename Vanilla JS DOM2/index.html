@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simple Input Form</title>
+    <style>
+      .form-group {
+        display: block;
+        position: relative;
+        margin-bottom: 20px;
+      }
+
+      .form-group label {
+        position: absolute;
+        top: -20px;
+        left: 0;
+        font-weight: bold;
+      }
+
+      .form-group input {
+        padding: 5px;
+        border: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <p>Input radius value and get the volume of a sphere.</p>
+    <form>
+      <div class="form-group">
+        <label for="formGroupExampleInput">Radius</label>
+        <input
+          type="number"
+          class="form-control"
+          id="formGroupExampleInput"
+          placeholder="Example input placeholder"
+        />
+      </div>
+      <div class="form-group">
+        <label for="formGroupExampleInput2">Volume</label>
+        <input
+          type="number"
+          class="form-control"
+          id="formGroupExampleInput2"
+          placeholder="Another input placeholder"
+        />
+      </div>
+
+      <button type="button" onclick="calculateVolume()">Calculate</button>
+    </form>
+
+    <script>
+      function calculateVolume() {
+        var radius = parseFloat(
+          document.getElementById("formGroupExampleInput").value
+        );
+
+        // Check if the radius is a positive number
+        if (isNaN(radius) || radius <= 0) {
+          alert("Please enter a valid positive radius.");
+          return;
+        }
+
+        // Calculate the volume of the sphere
+        var volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+
+        // Display the result
+        document.getElementById("formGroupExampleInput2").value =
+          volume.toFixed(2);
+      }
+    </script>
+  </body>
+</html>

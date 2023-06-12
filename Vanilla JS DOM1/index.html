@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Activity 1 - Vanilla JS DOM</title>
+    <style>
+      /* CSS style to change the color of the paragraph */
+      .highlight {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="text">Vanilla JS DOM</p>
+    <div>
+      <button id="jsstyle" onclick="js_style()">Style</button>
+    </div>
+
+    <script>
+      function js_style() {
+        // Get the paragraph element by its ID
+        var paragraph = document.getElementById("text");
+
+        // Add the 'highlight' class to change the style
+        paragraph.classList.add("highlight");
+      }
+    </script>
+  </body>
+</html>
